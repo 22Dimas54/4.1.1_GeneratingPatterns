@@ -39,18 +39,10 @@ public class PersonBuilder implements IPersonBuilder {
         } else {
             StringBuilder builder = new StringBuilder();
             builder.append("\nНе указали достаточное количество данных:");
-            if (name == null) {
-                builder.append("\nИмя - незаполнено!");
-            }
-            if (surname == null) {
-                builder.append("\nФамилия - незаполнено!");
-            }
-            if (age <= 0) {
-                builder.append("\nВозраст - незаполнен или отрицательный!");
-            }
-            if (address == null) {
-                builder.append("\nАдрес - незаполнено!");
-            }
+            builder.append("\nИмя - незаполнено!");
+            builder.append("\nФамилия - незаполнено!");
+            builder.append("\nВозраст - незаполнен или отрицательный!");
+            builder.append("\nАдрес - незаполнено!");
             throw new IllegalStateException(builder.toString());
         }
     }
