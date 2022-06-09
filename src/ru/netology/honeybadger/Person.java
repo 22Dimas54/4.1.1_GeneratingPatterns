@@ -4,10 +4,10 @@ import java.util.Objects;
 import java.util.OptionalInt;
 
 public class Person {
-    protected final String name;
-    protected final String surname;
-    protected int age;
-    protected String address;
+    private final String name;
+    private final String surname;
+    private int age;
+    private String address;
 
     public Person(String name, String surname) {
         this.name = name;
@@ -62,10 +62,9 @@ public class Person {
         }
     }
 
-    public PersonBuilder newChildBuilder() {
-        PersonBuilder personBuilder = new PersonBuilder();
+    public PersonBuilderImpl newChildBuilder() {
+        PersonBuilderImpl personBuilder = new PersonBuilderImpl();
         personBuilder.setSurname(this.getSurname());
-        personBuilder.setAge(this.getAge().getAsInt());
         personBuilder.setAddress(this.getAddress());
         return personBuilder;
     }

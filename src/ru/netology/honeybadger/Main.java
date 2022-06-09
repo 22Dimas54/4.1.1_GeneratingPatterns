@@ -2,7 +2,7 @@ package ru.netology.honeybadger;
 
 public class Main {
     public static void main(String[] args) {
-        Person mom = new PersonBuilder()
+        Person mom = new PersonBuilderImpl()
                 .setName("Анна")
                 .setSurname("Вольф")
                 .setAge(31)
@@ -14,13 +14,13 @@ public class Main {
         System.out.println("У " + mom + " есть сын, " + son);
 
         try {
-            new PersonBuilder().build();
+            new PersonBuilderImpl().build();
         } catch (IllegalStateException e) {
             System.out.println(e.getMessage());
         }
 
         try {
-            new PersonBuilder().setAge(-100).build();
+            new PersonBuilderImpl().setAge(-100).build();
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
